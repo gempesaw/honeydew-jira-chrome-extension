@@ -1,0 +1,15 @@
+{
+   "content_scripts": [ {
+      "js": [ "src/inject/inject.js" ],
+      "matches": [ "https://arnoldmedia.jira.com/browse/*" ]
+   } ],
+   "description": "Find the Honeydew automation for this ticket!",
+   "icons": {
+      "128": "icons/hd128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArxd+WcnXUtlS0hs+dwIWG2veSm7Baj+YGtKqYGPQVxRK9CBtZH7L8qc7A9IfxxAB/rFpWNmh+RIKkYDs0yvGP1u3jl5B40O5+QtFat8al0xBxOD9lCkPzg9sU7ZMBXUArHmeaFYLn7MFjfo21imMYPW9wo33/fu80DuMceJPM4U81JPS0OkdE7fr4WWYLx121wCUmLBKRnhgPYQwD6QFwtMvbHs56UbjbPMExPLlL0RdL2XH4cKE9CpEQk7sA14kO2Y+N25CdF/5kU9RumIMJh6B+ukMI43Oq1/amGwyILmL+7wdsauDddTEf/W7rcyI49x50t120wT1kQHhx/C+HQIDAQAB",
+   "manifest_version": 2,
+   "name": "Honeydew Automation Finder",
+   "permissions": [ "http://honeydew.be.jamconsultg.com/" ],
+   "version": "0.0.9"
+}
