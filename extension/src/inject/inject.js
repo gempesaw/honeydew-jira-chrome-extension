@@ -1,3 +1,4 @@
+/*global auth, hostname */
 // TODO: maybe a 'loading' message ?
 
 (function () {
@@ -24,7 +25,8 @@
 
     function searchForTicket(ticket) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://qa-91.terminus1.openstack.internal/grep.php?filter=" + ticket, true);
+        xhr.open('GET', 'http://' + hostname +  '/grep.php?filter=' + ticket, true);
+        xhr.setRequestHeader('Authorization', auth);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 var features = JSON.parse(xhr.responseText);
