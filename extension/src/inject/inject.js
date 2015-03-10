@@ -5,18 +5,16 @@
     var ticket = getTicketFromJiraUrl();
     searchForTicket(ticket);
 
-    // if we're on a search page, poll the url for changes so we can
-    // keep putting ourselves in
-    if (window.location.search.match(/(?:filter|jql)=/)) {
-        var previousTicket = ticket;
-        var search = window.setInterval( function () {
-            var currentTicket = getTicketFromJiraUrl();
-            if ( previousTicket !== currentTicket ) {
-                searchForTicket(currentTicket);
-                previousTicket = currentTicket;
-            }
-        }, 1000 );
-    }
+    // Switching between tickets (may) use AJAX now, so we'll just check more frequently
+    var previousTicket = ticket;
+    var search = window.setInterval( function () {
+        var currentTicket = getTicketFromJiraUrl();
+        if ( previousTicket !== currentTicket ) {
+            console.log('used the interval');
+            searchForTicket(currentTicket);
+            previousTicket = currentTicket;
+        }
+    }, 1000 );
 
     function getTicketFromJiraUrl() {
         var matches = window.location.pathname.match(/\/browse\/(\w+-\d+)/);
