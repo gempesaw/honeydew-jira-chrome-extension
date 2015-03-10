@@ -58,11 +58,17 @@
     }
 
     function convertFeaturesToMarkup(features) {
-        var base = "https://honeydew.be.jamconsultg.com/?";
-        return features.reduce(function (html, feature) {
-            feature = feature.replace(/\/opt\/honeydew\/features/, '');
-            return html += "<li><a href=\"" + base + feature + "\" title=\"View this issue in automation\" target=\"_blank\">" + feature + "</a></li>";
-        }, "");
+        var base = "https://" + hostname + "/?";
+        if (features.length === 0) {
+            return 'No features were found! You could <a href="' + base +'">make one</a>! :)';
+        }
+        else {
+            return features.map(function (feature) {
+                return feature.replace(/\/opt\/honeydew\/features/, '');
+            }).reduce(function (html, feature) {
+                return html += "<li><a href=\"" + base + feature + "\" title=\"View this issue in automation\" target=\"_blank\">" + feature + "</a></li>";
+            }, "");
+        }
     }
 
     function appendToSidebar(div) {
