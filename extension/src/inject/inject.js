@@ -26,7 +26,6 @@
     function searchForTicket(ticket) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://' + hostname +  '/grep.php?filter=' + ticket, true);
-        xhr.setRequestHeader('Authorization', auth);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 var features = JSON.parse(xhr.responseText);
