@@ -23,10 +23,11 @@
 
     function searchForTicket(ticket) {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://' + hostname +  '/grep.php?filter=' + ticket, true);
+        xhr.open('GET', 'https://' + hostname +  '/rest.php/tree/features?needle=' + ticket, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
-                var features = JSON.parse(xhr.responseText);
+                var features = JSON.parse(xhr.responseText).list;
+                console.log(features);
                 appendToSidebar(createDiv(features));
             }
         };
@@ -56,13 +57,13 @@
     }
 
     function convertFeaturesToMarkup(features) {
-        var base = "https://" + hostname + "/?";
+        var base = "https://" + hostname + "/#/features/";
         if (features.length === 0) {
             return 'No features were found! You could <a href="' + base +'">make one</a>! :)';
         }
         else {
             return features.map(function (feature) {
-                return feature.replace(/\/opt\/honeydew\/features/, '');
+                return feature.replace(/^features\//, '');
             }).reduce(function (html, feature) {
                 return html += "<li><a href=\"" + base + feature + "\" title=\"View this issue in automation\" target=\"_blank\">" + feature + "</a></li>";
             }, "");
