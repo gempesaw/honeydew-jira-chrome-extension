@@ -1,7 +1,7 @@
 /*global auth, hostname */
 // TODO: maybe a 'loading' message ?
 
-(function () {
+(function addHoneydewPanelToJIRA() {
     var ticket = getTicketFromJiraUrl();
     searchForTicket(ticket);
 
@@ -77,4 +77,4 @@
             sidebar.appendChild(div);
         }
     }
-}());
+})();
