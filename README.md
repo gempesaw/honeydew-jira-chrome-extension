@@ -17,7 +17,7 @@ a key called list:
     { "success": true, "list": [] }
 
 We parse the list into links back to the Honeydew element and append
-it to the DOM in the prope rposition.
+it to the DOM in the proper position.
 
 ### packaging
 
