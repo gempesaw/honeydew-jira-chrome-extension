@@ -11,7 +11,7 @@
     "content_scripts": [ {
         "js": [
             "src/inject/auth.js",
-            "src/inject/inject.js"
+            "src/inject/inject-jira.js"
         ],
         "matches": [
             "https://arnoldmedia.jira.com/browse/*"
