@@ -22,7 +22,7 @@
         var projects = [
             'ADTECH',
             'AREPORT',
-            'ARMYFITe',
+            'ARMYFIT',
             'SCMOBILE',
             'BACTES',
             'BLOG',
@@ -69,7 +69,7 @@
         var joinedProjects = '(' + projects.map(function (it) {
                 return it + '-\\d+';
         }).join('|') + ')';
-        var plainTicket = joinedProjects + '(?!</a>|\\d|")';
+        var plainTicket = joinedProjects + '(?!</a>|\\d|"|\\)|\\]|\')';
         return new RegExp(plainTicket);
     }
 })();
