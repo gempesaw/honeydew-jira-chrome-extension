@@ -3,7 +3,7 @@
 Adds a sidebar indicating what honeydew features cover the current
 test.
 
-![extension/screenshot.png](extension/screenshot.png)
+![screenshot-jira.png](screenshot-jira.png)
 
 ### implementation
 
