@@ -1,7 +1,7 @@
 {
     "name": "Honeydew Automation Finder",
     "permissions": [ "https://honeydew.be.jamconsultg.com/" ],
-    "version": "0.0.16",
+    "version": "0.0.17",
     "description": "Find the Honeydew automation for this ticket!",
     "icons": {
         "128": "icons/hd128.png"
@@ -15,13 +15,6 @@
         ],
         "matches": [
             "https://arnoldmedia.jira.com/browse/*"
-        ]
-    }, {
-        "js": [
-            "src/inject/inject-flowdock.js"
-        ],
-        "matches": [
-            "https://www.flowdock.com/app/*"
         ]
     }]
 }
